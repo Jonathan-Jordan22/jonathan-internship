@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Countdown from "./Countdown";
 
-const NftCard = ({ item }) => {
+const NftCard = ({ item, showCountdown = true }) => {
   return (
     <div className="nft__item">
       <div className="author_list_pp">
@@ -15,7 +15,7 @@ const NftCard = ({ item }) => {
           <i className="fa fa-check"></i>
         </Link>
       </div>
-      <Countdown expiryDate={item.expiryDate} />
+      {showCountdown && <Countdown expiryDate={item.expiryDate} />}
 
       <div className="nft__item_wrap">
         <div className="nft__item_extra">
